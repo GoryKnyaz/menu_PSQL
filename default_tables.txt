@@ -1,0 +1,44 @@
+/*создание таблицы филлиалов*/
+CREATE TABLE IF NOT EXISTS public."branches"
+(
+    id integer NOT NULL DEFAULT 1,
+    parent_id integer,
+    name text,
+    CONSTRAINT "branches_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."branches"
+    OWNER to postgres;
+
+/*создание таблицы сотрудников*/
+CREATE TABLE IF NOT EXISTS public."employees"
+(
+    id integer NOT NULL DEFAULT 1,
+    branch_id integer,
+    fio text,
+    birthday date,
+    jobtitle_id integer,
+    salary integer,
+    begin_work date,
+    CONSTRAINT "employees_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."employees"
+    OWNER to postgres;
+
+/*создание таблицы должностей*/
+CREATE TABLE IF NOT EXISTS public."jobtitles"
+(
+    id integer NOT NULL DEFAULT 1,
+    jobtitle text,
+    CONSTRAINT "jobtitles_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS my_company."jobtitles"
+    OWNER to postgres;

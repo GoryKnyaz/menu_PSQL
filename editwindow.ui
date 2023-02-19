@@ -1,0 +1,1419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>editwindow</class>
+ <widget class="QDialog" name="editwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Card</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icon.ico</normaloff>:/icon.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow
+{
+	background-color: rgb(32,15,33);
+	button-layout: 1;
+}
+QDialog#editwindow
+{
+	background-image: url(:/back_ground.jpg);
+}
+QLabel
+{
+	color: rgb(246,56,204);
+	background: rgba(0, 0, 0, 0);
+}
+QLineEdit
+{
+	color: white;
+	selection-background-color: rgb(246,56,204);
+	border-style: none;
+	border-radius: 7px;
+	background: rgb(90,61,92);
+}
+QPushButton
+{
+	background: rgb(56,32,57);
+	color: white;
+	border: 2px outset rgb(246,56,204);
+    border-radius: 7px;
+}
+QPushButton::pressed
+{
+	background: white;
+	border-style: inset;
+	border-color: rgb(246,56,204);
+	color: black;
+}
+QTreeWidget
+{
+	background: rgb(90,61,92);
+}
+QTableView
+{
+	color: white;
+	selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.7, y2: 0.7, stop: 0 rgb(90,61,92), stop: 1 rgb(246,56,204));
+	gridline-color: white;
+	text-align: center;
+	background: rgb(90,61,92);
+}
+QHeaderView::section 
+{ 
+	color: white;
+	background-color: rgb(42,25,43);
+}
+QScrollBar::horizontal
+{
+	color: black;
+	border: 1px solid rgb(90,61,92);
+    background: rgb(246,56,204);
+ }
+QScrollBar::vertical
+{
+	color: black;
+	border: 1px solid rgb(90,61,92);
+    background: rgb(246,56,204);
+}
+QDateEdit
+{
+	color: white;
+	spacing: 5px;
+	border-radius: 7px;
+	background: rgb(90,61,92);
+	selection-background-color: rgb(246,56,204);
+}
+QComboBox
+{
+	color: white;
+	border-radius: 7px;
+	background: rgb(90,61,92);
+	selection-color: qlineargradient(x1: 0, y1: 0, x2: 0.7, y2: 0.7, stop: 0 rgb(90,61,92), stop: 1 rgb(246,56,204));
+}
+QComboBox:!active
+{
+	color: gray;
+	background: rgb(66,45,68);
+}
+QComboBox QAbstractItemView 
+{
+    color: white;
+	border-radius: 7px;
+	background: rgb(90,61,92);
+}
+QSpinBox
+{
+	color: white;
+	border-radius: 7px;
+	background: rgb(90,61,92);
+	selection-background-color: rgb(246,56,204);
+}
+QCheckBox
+{
+	color: rgb(246,56,204);
+	background: rgba(0, 0, 0, 0);
+}
+QMessageBox 
+{ 
+	background-color: rgb(32,15,33); 
+	icon: url(:/icon.ico); 
+}
+QMessageBox QLabel 
+{ 
+	color: white; 
+}
+QMessageBox QPushButton 
+{ 
+	background: rgb(56,32,57);
+	width: 50px;
+	color: white;
+}</string>
+  </property>
+  <widget class="QWidget" name="employee_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <widget class="QLabel" name="comment_emp">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>210</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Карточка Сотрудника</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancel_emp">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>350</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Отмена</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ok_emp">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>350</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ок</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="branch_emp">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>250</y>
+      <width>230</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="branch_emp_text">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>255</y>
+      <width>60</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Филиал</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="jobtitle_emp">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>200</y>
+      <width>230</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="jobtitle_emp_text">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>205</y>
+      <width>85</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Должность</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fio_emp_text">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>155</y>
+      <width>40</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ФИО</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="fio_emp">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>150</y>
+      <width>230</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="birthday_emp_text">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>155</y>
+      <width>120</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>День Рождения</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="birthday_emp">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>150</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="minimumDateTime">
+     <datetime>
+      <hour>21</hour>
+      <minute>0</minute>
+      <second>0</second>
+      <year>1900</year>
+      <month>1</month>
+      <day>1</day>
+     </datetime>
+    </property>
+    <property name="maximumDate">
+     <date>
+      <year>2100</year>
+      <month>12</month>
+      <day>31</day>
+     </date>
+    </property>
+    <property name="minimumDate">
+     <date>
+      <year>1900</year>
+      <month>1</month>
+      <day>1</day>
+     </date>
+    </property>
+   </widget>
+   <widget class="QLabel" name="salary_emp_text">
+    <property name="geometry">
+     <rect>
+      <x>412</x>
+      <y>255</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Оклад</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="begin_work_emp">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>200</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="begin_work_emp_text">
+    <property name="geometry">
+     <rect>
+      <x>398</x>
+      <y>205</y>
+      <width>85</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Работает с</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="salary_emp">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>250</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>150</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>1000000</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="branch_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <widget class="QComboBox" name="parent_branch">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>300</y>
+      <width>330</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_branch">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>150</y>
+      <width>330</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="comment_branch">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>175</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>15</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Карточка Офиса</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name_branch_text">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>100</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Название</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="isParent_branch">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>260</y>
+      <width>140</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Родительский?</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="parent_branch_text">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>210</y>
+      <width>85</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Родитель</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancel_branch">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>350</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Отмена</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ok_branch">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>350</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ок</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="filter_widget" native="true">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <widget class="QLabel" name="comment_filter">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>30</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Фильтр</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="salary_filter">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>250</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000000</number>
+    </property>
+    <property name="singleStep">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="branch_filter_text">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>205</y>
+      <width>69</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Филиал</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="branch_filter">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>200</y>
+      <width>250</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ok_filter">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>350</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ок</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancel_filter">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>350</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Отмена</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="fio_filter">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>150</y>
+      <width>250</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fio_filter_text">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>158</y>
+      <width>40</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ФИО</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="begin_work_filter">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>200</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>150</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="begin_work_filter_text">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>205</y>
+      <width>115</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Начало работы</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="begin_work_filter_condition">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>200</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="birthday_filter_condition">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>150</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="birthday_filter">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>150</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>150</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="birthday_filter_text">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>155</y>
+      <width>116</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>День рождения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="jobtitle_filter">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>250</y>
+      <width>250</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="jobtitle_filter_text">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>255</y>
+      <width>87</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Должность</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="salary_filter_text">
+    <property name="geometry">
+     <rect>
+      <x>415</x>
+      <y>255</y>
+      <width>57</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Оклад</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="salary_filter_condition">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>250</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>name_branch</tabstop>
+  <tabstop>isParent_branch</tabstop>
+  <tabstop>parent_branch</tabstop>
+  <tabstop>ok_branch</tabstop>
+  <tabstop>cancel_branch</tabstop>
+  <tabstop>fio_emp</tabstop>
+  <tabstop>birthday_emp</tabstop>
+  <tabstop>jobtitle_emp</tabstop>
+  <tabstop>begin_work_emp</tabstop>
+  <tabstop>branch_emp</tabstop>
+  <tabstop>salary_emp</tabstop>
+  <tabstop>ok_emp</tabstop>
+  <tabstop>cancel_emp</tabstop>
+  <tabstop>fio_filter</tabstop>
+  <tabstop>birthday_filter_condition</tabstop>
+  <tabstop>birthday_filter</tabstop>
+  <tabstop>branch_filter</tabstop>
+  <tabstop>begin_work_filter_condition</tabstop>
+  <tabstop>begin_work_filter</tabstop>
+  <tabstop>jobtitle_filter</tabstop>
+  <tabstop>salary_filter_condition</tabstop>
+  <tabstop>ok_filter</tabstop>
+  <tabstop>cancel_filter</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
