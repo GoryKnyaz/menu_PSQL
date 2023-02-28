@@ -138,7 +138,7 @@ QStringList editwindow::getBranchCard()
         (ui->isParent_branch->isChecked() ?
                     QString::fromStdString(std::to_string(countBranch + 1))
                     :
-                    QString::fromStdString(std::to_string(ui->parent_branch->currentIndex() + 1))),
+                    QString::fromStdString(std::to_string(ui->parent_branch->currentIndex()))),
         '\'' + quoteHandling(ui->name_branch->text()) + '\''
     };
 }
