@@ -168,7 +168,7 @@ QList<QStringList> MainWindow::getDataFromTable(const QString &tableName, const 
     QString headers_string("SELECT ");
     for (size_t index(0), size(headers.size()); index != size; ++index)
         headers_string += headers[index] + (index == size - 1 ? ' ' : ',');
-    if (!query.exec(headers_string + " FROM \"" + tableName + "\";"))
+    if (!query.exec(headers_string + " FROM \"" + tableName + "\"" + (headers[0] == "id" ? "ORDER BY id;" : ";")))
     {
         QMessageBox::critical(this, "Ошибка при открытии таблиц", query.lastError().text());
         return {};
@@ -291,7 +291,6 @@ void MainWindow::setupTreeView()
     ui->branchTree->clear();
     ui->branchTree->addTopLevelItems(topItems);
 }
-
 
 
 void MainWindow::on_exit_clicked()
@@ -446,8 +445,12 @@ void MainWindow::on_add_branch_clicked()
     if (ed.getisCorrectCard())
     {
         QSqlQuery add(db);
-        if (!add.exec(getInsertCommand("branches", ed.countBranch, ed.getBranchCard())))
+        QStringList card(ed.getBranchCard());
+        if (!add.exec(getInsertCommand("branches", ed.countBranch, card)))
+        {
             QMessageBox::warning(this, "Ошибка при добавлении нового офиса", add.lastError().text());
+            return;
+        }
         setupTreeView();
     }
 }
